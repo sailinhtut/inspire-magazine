@@ -1,0 +1,1447 @@
+{
+	"info": {
+		"_postman_id": "09ec7798-dd4b-4e96-9a92-b6e78e9faa21",
+		"name": "Noun-Entertainment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29527614"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Sai Lin Htut\",\r\n    \"email\" : \"sailinhtut76062@gmail.com\",\r\n    \"password\" : \"sailinhtut\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|857lbAQ2hJUl0zmZEbkPkyaMuMOy3x9Ovu8RLUWX136ac1c8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|857lbAQ2hJUl0zmZEbkPkyaMuMOy3x9Ovu8RLUWX136ac1c8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Bo Bo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log In",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Assuming the response is in JSON format\r",
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"// Extract the value you want (replace 'key' with the actual key)\r",
+									"var extractedValue = jsonData.token;\r",
+									"\r",
+									"// Set the value as a global variable\r",
+									"pm.globals.set(\"token\", extractedValue);\r",
+									"\r",
+									"console.log(\"Global variable set:\", pm.globals.get(\"token\"));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sailinhtut@gmail.com\",\r\n    \"password\" : \"sailinhtut\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/logout/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"logout",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Email",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Email",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Magazines",
+			"item": [
+				{
+					"name": "Get Magazines",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/magazines",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"magazines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get public magazines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/public/magazines",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"public",
+								"magazines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Magazine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Calm Down",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "We are working on it",
+									"type": "text"
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/car_3.jpg"
+								},
+								{
+									"key": "advertisement_photo",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/magazines",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"magazines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Magazine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Love is Hurt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Don't test. Sorry.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saili/Desktop/cover_1.png",
+									"disabled": true
+								},
+								{
+									"key": "advertisement_photo",
+									"type": "file",
+									"src": "/C:/Users/saili/Desktop/ads_1.jpg",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/magazines/45",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"magazines",
+								"45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Magazine",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/magazines/21",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"magazines",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Topic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/provider.png"
+								},
+								{
+									"key": "content_photos[]",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/batman.jpg"
+								},
+								{
+									"key": "title",
+									"value": "Vicky",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "My Daisy",
+									"type": "text"
+								},
+								{
+									"key": "magazine_id",
+									"value": "42",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/topics",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Topic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Alcohol",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Everything can change in one day ST",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "content_photos[]",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/provider.png",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/topics/53",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"topics",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Topic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/topics/20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"topics",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Content Photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content_photos[]",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/1024.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/topics/48/add-content-photo",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"topics",
+								"48",
+								"add-content-photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Content Photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content_photo_ids[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "content_photo_ids[]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "content_photo_ids[]",
+									"value": "5",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/topics/48/remove-content-photo",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"topics",
+								"48",
+								"remove-content-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entertainments",
+			"item": [
+				{
+					"name": "Get Entertainments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/entertainments/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entertainments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get public entertainments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/public/entertainments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"public",
+								"entertainments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Entertainment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hurt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Nothing to say",
+									"type": "text"
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saili/Desktop/noun_photos/october.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/entertainments/12",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entertainments",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Entertainment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Focus Your Version",
+									"type": "text"
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/batman.jpg"
+								},
+								{
+									"key": "description",
+									"value": "Build Your Best Ever Quality",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/entertainments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entertainments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Entertainment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/entertainments/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entertainments",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Series",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "December",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac quam id ante accumsan dapibus. Quisque at diam felis. Vivamus et nunc eget dui fringilla auctor. Duis ac sapien vitae risus tincidunt consequat.",
+									"type": "text"
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/images/cover_making.jpeg"
+								},
+								{
+									"key": "entertainment_id",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/series",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Series",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Love is gone",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Love is really gone",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/C:/Users/saili/Desktop/noun_photos/january.jpg",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/series/24",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"series",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Series",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/series/16",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"series",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Episode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Noun Media",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "မင်္ဂလာရှိသော နှစ်သစ်အခါသမယမှာ ပျော်ရွှင်ချမ်းမြေ့ကျပါစေလို့ Noun Media မှ ဆုမွန်ကောင်းတောင်းအပ်ပါသည်။",
+									"type": "text"
+								},
+								{
+									"key": "video_thumbnail",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/batman.jpg"
+								},
+								{
+									"key": "video_url",
+									"value": "https://www.youtube.com/watch?v=lkrbwFP6Ew4",
+									"type": "text"
+								},
+								{
+									"key": "series_id",
+									"value": "30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/episodes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Episode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Software Engineer Ep-1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac quam id ante accumsan dapibus. Quisque at diam felis. Vivamus et nunc eget dui fringilla auctor. Duis ac sapien vitae risus tincidunt consequat. ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "video_url",
+									"value": "https://www.youtube.com/watch?v=iZ-Jn-J4jpw&list=RDkVnecr5a1Sc&index=10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "video_thumbnail",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/benz_2.jpg",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/episodes/51",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"episodes",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Episode",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/episodes/23",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"episodes",
+								"23"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Header Images",
+			"item": [
+				{
+					"name": "Add Header Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/batman.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Payphone",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "redirect",
+									"value": "home",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/header-images",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"header-images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Header Images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/header-images",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"header-images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Header Image",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/header-images/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"header-images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Advertisements",
+			"item": [
+				{
+					"name": "Get Advertisements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/advertisements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"advertisements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Vicky",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hurt so good",
+									"type": "text"
+								},
+								{
+									"key": "redirect",
+									"value": "https://www.youtube.com/watch?v=Uqcwjy7Uek8&list=RDUqcwjy7Uek8&start_radio=1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/saisai/Desktop/batman.jpg"
+								},
+								{
+									"key": "ads_type",
+									"value": "popupaa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/advertisements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"advertisements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ads_type",
+									"value": "popup",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/saisai/Desktop/benz_2.jpg",
+										"/C:/Users/saisai/Desktop/1024.png"
+									]
+								},
+								{
+									"key": "name",
+									"value": "You The Last",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Thank for lighting up my life",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "redirect",
+									"value": "https://www.youtube.com/watch?v=pRfmrE0ToTo&list=RDUqcwjy7Uek8&index=10",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/advertisements/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"advertisements",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/advertisements/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"advertisements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meta Data",
+			"item": [
+				{
+					"name": "Add Meta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta-data/pravicy_policy",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta-data",
+								"pravicy_policy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Meta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta-data/pravicy-policy",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta-data",
+								"pravicy-policy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Meta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta-data",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Meta Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta-data/sailinhtut",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta-data",
+								"sailinhtut"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/testing",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"testing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aritsan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/artisan/cache:clear",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"artisan",
+						"cache:clear"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://beta.artmediamm.com/api",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

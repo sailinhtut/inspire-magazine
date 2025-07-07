@@ -1,0 +1,8 @@
+// ignore_for_file: constant_identifier_names
+
+const String appName = "Noun";
+const String description = "Creative Art Magazines";
+
+const String about_us = """
+Ad non cillum aliquip aliquip occaecat ipsum. Nostrud consectetur laborum laborum voluptate non nostrud commodo incididunt voluptate voluptate in id quis sint. Aliqua proident dolore esse minim fugiat non ad reprehenderit nulla consequat ad sunt esse. Aliqua deserunt Lorem pariatur reprehenderit aliquip officia. Proident magna cupidatat laboris dolor labore est laboris consectetur eu do do mollit commodo.\n\nCommodo minim excepteur elit ut laborum officia laborum nulla aliquip pariatur aliqua do sit. Sit est dolore ex nisi incididunt sint mollit irure irure sunt occaecat magna. Nisi duis qui commodo sit eiusmod ad sit nisi. Culpa ullamco elit Lorem qui sint nulla mollit proident.\n\nNostrud nisi reprehenderit enim ut irure ullamco adipisicing aliqua reprehenderit veniam dolor ipsum ipsum fugiat. Incididunt est sit in ut culpa laborum pariatur aliquip enim. Veniam Lorem sunt aute sint fugiat duis est sit adipisicing.\n\nCommodo pariatur sint reprehenderit ex dolor amet aliquip dolor sint deserunt dolor eu anim et. Occaecat aliquip sint Lorem reprehenderit exercitation velit Lorem dolor nostrud. Enim nostrud incididunt proident ipsum reprehenderit anim ut occaecat. Eiusmod velit exercitation sit non excepteur minim quis incididunt veniam esse laboris exercitation enim. Magna quis et cupidatat eiusmod nisi ullamco occaecat dolore culpa amet.\n\n
+""";
